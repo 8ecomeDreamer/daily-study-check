@@ -20,6 +20,13 @@ base-ai-assistant/
 ### controller
 ![img.png](images/energy-ai-api-controller.png)
 
-1.AiController包含了同步对话和流式对话接口
+1.AiController包含了同步对话和流式对话接口。
+2.同步对话（/chat/sync）逻辑：
+    2.1 加载最近的 N 轮"已完成"对话历史。
+    2.2 处理媒体类型，插入数据库，同时使用拦截器记录。
+    2.3 发送回复
+3.流式对话（/chat/sse）逻辑：
+    3.1 加载最近的 N 轮"已完成"对话历史。
+    3.2 发送流式回复，doOnNext拼接并流式回复每轮结果、doOnComplete获取最后回复结果插入数据库。
 
 ## energy-admin-api

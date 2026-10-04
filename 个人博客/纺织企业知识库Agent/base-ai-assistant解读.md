@@ -51,4 +51,10 @@ base-ai-assistant/
     2.1 分块文档
     2.2 增强文档内容
 
+#### AdminApiController
+1. AdminApiController（/api/admin）核心：管理后台接口。
+
+#### ScopeToolConfigController
+1. ScopeToolConfigController（/api/scope_tool_config）核心：权限配置解耦接口。
+
 ## energy-admin-api

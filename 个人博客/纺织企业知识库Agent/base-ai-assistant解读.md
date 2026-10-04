@@ -45,4 +45,10 @@ base-ai-assistant/
 1. CommandController（/api/command）核心：接收用户的指令。
 2. 执行接口（/execute）逻辑：替换对应的命令，并传入ai的prompt中。
 
+#### DocumentController
+1. DocumentController（/api/energy-ai/document）核心：向量库管理。
+2. refreshDocumentVector（/document/refresh）: 同步刷新书库文档内容到向量库。
+    2.1 分块文档
+    2.2 增强文档内容
+
 ## energy-admin-api

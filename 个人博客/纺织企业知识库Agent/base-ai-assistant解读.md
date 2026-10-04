@@ -21,7 +21,7 @@ base-ai-assistant/
 ![img.png](images/energy-ai-api-controller.png)
 
 #### AiController
-1.AiController核心：返回各种格式的对话接口。
+1.AiController（/api/energy-ai）核心：返回各种格式的对话接口。
 2.同步对话接口（/chat/sync）逻辑：
     2.1 加载最近的 N 轮"已完成"对话历史。
     2.2 处理媒体类型，插入数据库，同时使用拦截器记录。
@@ -37,5 +37,12 @@ base-ai-assistant/
     6.3 处理用户提问的文本和多媒体数据（generatePromptUserSpecConsumer）
     6.4 发送回复消息
 7.其他接口（如/chat/report、/chat/tools、/chat/mcp）逻辑:在client中添加参数，如system、tools、mcp等。
+
+#### AiToolController
+1. AiToolController（/api/energy-ai/tool）核心：调用其他ai平台的接口。
+
+#### CommandController
+1. CommandController（/api/command）核心：接收用户的指令。
+2. 执行接口（/execute）逻辑：替换对应的命令，并传入ai的prompt中。
 
 ## energy-admin-api

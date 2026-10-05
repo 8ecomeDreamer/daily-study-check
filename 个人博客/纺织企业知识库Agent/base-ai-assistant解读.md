@@ -73,3 +73,7 @@ base-ai-assistant/
 其他如guardrail、rag、skill、tool等都很常见
 
 ## energy-admin-api
+后台管理api模块
+
+## energy-ai-mcp
+对mcp创建配置以及设置具体mcp

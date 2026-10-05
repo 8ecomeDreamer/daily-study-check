@@ -57,4 +57,19 @@ base-ai-assistant/
 #### ScopeToolConfigController
 1. ScopeToolConfigController（/api/scope_tool_config）核心：权限配置解耦接口。
 
+### app
+![img.png](images/energy-ai-api-app-package.png)
+封装底层chatClient，提供给controller或者manager使用
+
+### manager
+![img.png](images/energy-ai-api-manager-package.png)
+封装controller代码逻辑，提高复用能力
+
+### workflow
+![img.png](images/energy-ai-api-workflow-package.png)
+工作流编排
+
+### 其他
+其他如guardrail、rag、skill、tool等都很常见
+
 ## energy-admin-api

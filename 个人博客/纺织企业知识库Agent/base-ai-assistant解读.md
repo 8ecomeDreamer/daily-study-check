@@ -62,6 +62,28 @@ base-ai-assistant/
 1. 由于项目中有多场景agent：如综合问答的agent、意向分析agent、图片分析agent、质量反馈agent reflection等等，所以需要封装agent（设计多agent可以更好的减少幻觉）
 2. 遵照agent设计范式（reAct、plan and execute、reflection、可能还有reflexion），因此采用abstract的方式继承
 
+#### BaseAgent
+##### run
+封装通用agent,定义通用执行流程:
+1.对话状态管理 （防止同时调用多个agent等）
+2.对话上下文管理 （保存上下文，方便交互时调用）
+3.步骤控制（防止对话步骤过长）
+4.异常处理
+5.通用资源清理
+
+##### runStream
+SseEmitter SpringBoot中最简单的实现流式输出的api。
+为了在界面中实现类似打字机般的效果，后端需要使用Flux与SSE技术。
+Flux: 以**异步数据流**的形式封装数据，支持边输出边生成的场景。
+SSE：客户端基于**http长连接**，向服务端发送连接，连接后服务端可持续向客户端发送数据，实现**实时高效传输**的效果。
+流程：用户输入prompt-> 后端利用Flux实现边生成边输出的效果 -> SSE将服务端与客户端进行连接，服务端发送数据 -> 前端直接展示数据，无需等待。
+
+#### ReActAgent
+
+#### PlanAndExecuteAgent
+
+#### ReflectionAgent
+
 ### app
 ![img.png](images/energy-ai-api-app-package.png)
 封装底层chatClient，提供给controller或者manager使用

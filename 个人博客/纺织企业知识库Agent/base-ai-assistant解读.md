@@ -57,6 +57,11 @@ base-ai-assistant/
 #### ScopeToolConfigController
 1. ScopeToolConfigController（/api/scope_tool_config）核心：权限配置解耦接口。
 
+### agent
+![img.png](images/energy-ai-api-agent-package.png)
+1. 由于项目中有多场景agent：如综合问答的agent、意向分析agent、图片分析agent、质量反馈agent reflection等等，所以需要封装agent（设计多agent可以更好的减少幻觉）
+2. 遵照agent设计范式（reAct、plan and execute、reflection、可能还有reflexion），因此采用abstract的方式继承
+
 ### app
 ![img.png](images/energy-ai-api-app-package.png)
 封装底层chatClient，提供给controller或者manager使用
